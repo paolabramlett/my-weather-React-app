@@ -13,7 +13,7 @@ export default function Box() {
             
             <form id="search-city-form">           
                     <input type="text" id="city-input" className="form-control" placeholder="Enter city" />
-                    <input type="submit" className="btn btn-primary" value="Search"/>            
+                    <input type="submit" className="btn btn-primary" value="Search"/>                              
             </form>
 
 
@@ -65,7 +65,7 @@ export default function Box() {
 
             <br />
             <footer className="github-link">
-                <a href="https://github.com/paolabramlett/Paola-bramlett-final-project" target="_blank">
+                <a href="https://github.com/paolabramlett/Paola-bramlett-final-project" target="_blank" rel="noreferrer">
                     Open-source code</a> by Paola Vasquez-Bramlett
             </footer> 
     </div>                 
