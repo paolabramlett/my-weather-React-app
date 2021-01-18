@@ -4,7 +4,7 @@ import "./Box.css";
 
 export default function Box() {
   return (
-    <div className="Box">
+    <div className="box">
         <div className="container">
             
             <h1>
