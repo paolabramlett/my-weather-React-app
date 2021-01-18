@@ -29,7 +29,7 @@ form {
 #emoji1 {
   position: relative;
   right: -90px;
-  top: -150px;
+  top: -200px;
   width: 135px;
 }
 
@@ -54,32 +54,12 @@ form {
   text-align: center;
   text-decoration: none;
 }
-div.col-3 {
-  font-size: 40px;
-  text-align: center;
-  color: #00303f;
-}
-div.col-md {
-  margin: -10 auto;
-}
 
-row {
-  text-align: center;
-}
 ul {
   list-style: none;
-  padding: 0;
+  padding: 50px;
   text-align: left;
   color: #00303f;
-}
-div.row.row-cols-5 {
-  text-align: center;
-  padding-bottom: 50px;
-  padding-top: 20px;
-}
-
-div.container {
-  text-align: center;
 }
 
 #description {
@@ -87,19 +67,7 @@ div.container {
   font-weight: bold;
 }
 
-#current-button {
-  margin-top: 20px;
-}
 .github-link {
   text-align: center;
   font-size: 14px;
-}
-
-#description-elements {
-  height: 170px;
-}
-
-#forecast {
-  text-align: center;
-  color: #00303f;
 }

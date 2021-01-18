@@ -13,7 +13,8 @@ export default function Box() {
             
             <form id="search-city-form">           
                     <input type="text" id="city-input" className="form-control" placeholder="Enter city" />
-                    <input type="submit" className="btn btn-primary" value="Search"/>                              
+                    <br />
+                    <input type="submit" className="btn btn-primary" value="Search" />                              
             </form>
 
 
