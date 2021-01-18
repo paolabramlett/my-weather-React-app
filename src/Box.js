@@ -17,7 +17,7 @@ export default function Box() {
             </form>
 
 
-            <h2 id="city"></h2>
+            <h2 id="city">Oaxaca</h2>
 
 
             <div className="row">
@@ -26,10 +26,10 @@ export default function Box() {
                         <span className="temperature float-left" id="temp">
                             27
                         </span>
-                        <a className="cel float-left" id="cel" href="#">
+                        <a className="cel float-left" id="cel" href="/">
                             ºC | 
                         </a>
-                        <a className="far float-left" id="far" href="#">
+                        <a className="far float-left" id="far" href="/">
                             ºF
                         </a>
                     </div>
