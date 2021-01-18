@@ -60,14 +60,7 @@ export default function Box() {
                 </div>    
                    
                 <div className="row weather-forecast" id="forecast"></div>
-        </div>
-    
-
-            <br />
-            <footer className="github-link">
-                <a href="https://github.com/paolabramlett/Paola-bramlett-final-project" target="_blank" rel="noreferrer">
-                    Open-source code</a> by Paola Vasquez-Bramlett
-            </footer> 
+        </div>         
     </div>                 
   );
 }
