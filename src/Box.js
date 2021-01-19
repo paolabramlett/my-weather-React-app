@@ -1,9 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./Box.css";
+import WeatherInfo from "./WeatherInfo"
 
 
-export default function Box() {
-  return (
+export default function Box(props) {
+    const [weatherInfo, setWeatherInfo] = useState({ready: false});
+    const [city, setCity] = useState(props.defaultCity);
+
+    function getResponse(response){
+        console.log(response.data);
+
+        setWeatherInfo({
+            ready: true,
+            temperature: response.data.main.temp,
+            humidity: response.data.main.humidity,
+            date: new Date(response.data.dt * 1000),
+            description: response.data.weather[0].description,
+            icon: response.data.weather[0].icon,
+            wind: response.data.wind.speed,
+            city: response.data.name,
+        });
+    }
+
+    function getSearch(event){
+        event.preventDefault();
+        search();
+    }
+
+    function updateSearch(event) {
+        setCity(event.target.value);
+    }
+
+    function search(){
+        let units = "metric";
+        let apiKey = "21bc8603ffd9249d88b5d175d531dd75";
+        let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+        let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`; 
+
+        axios.get(apiUrl).then(getResponse); 
+    }
+
+    if (weatherInfo.ready) {
+       return (
     <div className="box">
         <div className="container">
             
@@ -11,57 +50,23 @@ export default function Box() {
                 Hello!
             </h1>
             
-            <form id="search-city-form">           
-                    <input type="text" id="city-input" className="form-control" placeholder="Enter city" />
+            <form onSubmit={getSearch}>           
+                    <input type="text" id="city-input" className="form-control" placeholder="Enter city" onChange={updateSearch} />
                     <br />
                     <input type="submit" className="btn btn-primary" value="Search" />                              
             </form>
 
-
-            <h2 id="city">Oaxaca</h2>
-
-
-            <div className="row">
-                <div className="col-md">
-                    <div className="clearfix">
-                        <span className="temperature float-left" id="temp">
-                            27
-                        </span>
-                        <a className="cel float-left" id="cel" href="/">
-                            ºC | 
-                        </a>
-                        <a className="far float-left" id="far" href="/">
-                            ºF
-                        </a>
-                    </div>
-                </div>
-            </div>
-                <div className="container">
-                    <div className="row" id="description-elements">
-                        <div className="col-md">
-                            <ul>
-                                <li id="description">SUNNY</li>
-                                <li id="date">
-                                    Time goes here
-                                </li>
-                                <br />
-                                <li><strong>Feels like:</strong> <span id="feels">7%</span></li>
-                                <li><strong>Humidity:</strong> <span id="humidity">76%</span></li>
-                                <li><strong>Wind:</strong> <span id="wind">5km/h</span> </li>
-                            </ul>
-                     
-                            <img
-                            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                            alt="weathericon"
-                            id="emoji1"
-                            className="float-left"
-                            />    
-                        </div>
-                    </div>
-                </div>    
-                   
+            <WeatherInfo data={weatherInfo}/>
+                              
                 <div className="row weather-forecast" id="forecast"></div>
         </div>         
     </div>                 
-  );
+  ); 
+    } else {
+        search();
+        return "Loading...";
+    }
+    
+
+  
 }
