@@ -26,10 +26,10 @@ form {
   left: 120px;
   max-width: 50%;
 }
-#emoji1 {
+canvas {
   position: relative;
-  right: -90px;
-  top: -200px;
+  right: -250px;
+  top: -150px;
   width: 135px;
 }
 
@@ -57,15 +57,10 @@ form {
 
 ul {
   list-style: none;
-  padding: 50px;
   text-align: left;
   color: #00303f;
 }
 
-#description {
-  text-transform: capitalize;
-  font-weight: bold;
-}
 
 .github-link {
   text-align: center;

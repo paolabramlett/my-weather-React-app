@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Box.css";
-import WeatherInfo from "./WeatherInfo"
+import WeatherInfo from "./WeatherInfo";
+import Spinner from 'react-bootstrap/Spinner';
 
 
 export default function Box(props) {
@@ -58,13 +59,17 @@ export default function Box(props) {
 
             <WeatherInfo data={weatherInfo}/>
                               
-                <div className="row weather-forecast" id="forecast"></div>
+                <div className="row weather-forecast"></div>
         </div>         
     </div>                 
   ); 
     } else {
         search();
-        return "Loading...";
+        return (
+            <div>
+                <Spinner animation="border" variant="primary" />
+            </div>
+        )
     }
     
 
