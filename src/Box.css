@@ -26,12 +26,6 @@ form {
   left: 120px;
   max-width: 50%;
 }
-canvas {
-  position: relative;
-  right: -250px;
-  top: -150px;
-  width: 135px;
-}
 
 #temp {
   color: #00303f;

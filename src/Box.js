@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Box.css";
 import WeatherInfo from "./WeatherInfo";
 import Spinner from 'react-bootstrap/Spinner';
+import WeatherForecast from "./WeatherForecast";
 
 
 export default function Box(props) {
@@ -59,7 +60,7 @@ export default function Box(props) {
 
             <WeatherInfo data={weatherInfo}/>
                               
-                <div className="row weather-forecast"></div>
+            <WeatherForecast city={weatherInfo.city} />
         </div>         
     </div>                 
   ); 
