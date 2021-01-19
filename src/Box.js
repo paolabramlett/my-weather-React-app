@@ -36,7 +36,7 @@ export default function Box(props) {
 
     function search(){
         let units = "metric";
-        let apiKey = "21bc8603ffd9249d88b5d175d531dd75";
+        let apiKey = "de8a977142744faddd6c8277b005e3ef";
         let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
         let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`; 
 
@@ -72,7 +72,5 @@ export default function Box(props) {
             </div>
         )
     }
-    
 
-  
 }
